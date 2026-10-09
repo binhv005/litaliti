@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #F8F5F0;
+    color: #292521;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif, .font-display {
+    text-wrap: balance;
+  }
+
+  p, li, span, blockquote {
+    text-wrap: pretty;
+  }
+}
+
+.clip-hero-curve {
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .clip-hero-curve {
+    border-bottom-left-radius: 6rem;
+    border-bottom-right-radius: 6rem;
+  }
+}
+
+.glass-pill {
+  background: rgba(254, 250, 241, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(36, 51, 34, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4C0A8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A98567;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Click feedback for buttons and primary CTAs */
+button:not(:disabled):active,
+a[href="#booking"]:active {
+  transform: scale(0.97);
+}
+
+/* Reduced motion: no keyframe animations (slides/zooms); scroll reveals fall back to a soft fade in ScrollReveal */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
